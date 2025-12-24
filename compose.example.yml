@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   docker_state_exporter:
-    image: hakikaru/docker_state_exporter:1.5.0
+    image: hakikaru/docker_state_exporter:latest
     volumes:
       - type: bind
         source: /var/run/docker.sock

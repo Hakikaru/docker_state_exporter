@@ -79,7 +79,7 @@ I have not tested it in any other environment.
 ### Build
 
 ```bash
-git clone https://github.com/hakikaru/docker_state_exporter:latest
+git clone https://github.com/Hakikaru/docker_state_exporter
 cd docker_state_exporter
 sudo docker build -t docker_state_exporter_test .
 ```
