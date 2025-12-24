@@ -26,7 +26,7 @@ For Docker run.
 sudo docker run -d \
   -v "/var/run/docker.sock:/var/run/docker.sock" \
   -p 8080:8080 \
-  hakikaru/docker_state_exporter:latest \
+  hakikaru/docker_state_exporter:1.5.0 \
   -listen-address=:8080
 ```
 
@@ -38,7 +38,7 @@ version: '3.8'
 
 services:
   docker_state_exporter:
-    image: hakikaru/docker_state_exporter:latest
+    image: hakikaru/docker_state_exporter:1.5.0
     volumes:
       - type: bind
         source: /var/run/docker.sock
