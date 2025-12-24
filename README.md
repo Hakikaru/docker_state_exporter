@@ -26,7 +26,7 @@ For Docker run.
 sudo docker run -d \
   -v "/var/run/docker.sock:/var/run/docker.sock" \
   -p 8080:8080 \
-  karugaru/docker_state_exporter \
+  hakikaru/docker_state_exporter:latest \
   -listen-address=:8080
 ```
 
@@ -38,7 +38,7 @@ version: '3.8'
 
 services:
   docker_state_exporter:
-    image: karugaru/docker_state_exporter
+    image: hakikaru/docker_state_exporter:latest
     volumes:
       - type: bind
         source: /var/run/docker.sock
@@ -79,7 +79,7 @@ I have not tested it in any other environment.
 ### Build
 
 ```bash
-git clone https://github.com/karugaru/docker_state_exporter
+git clone https://github.com/hakikaru/docker_state_exporter:latest
 cd docker_state_exporter
 sudo docker build -t docker_state_exporter_test .
 ```
