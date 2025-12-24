@@ -134,8 +134,12 @@ func (c *dockerHealthCollector) collectMetrics(ch chan<- prometheus.Metric) {
 }
 
 func (c *dockerHealthCollector) collectContainer() {
-	containers, err := c.containerClient.ContainerList(context.Background(), types.ContainerListOptions{All: true})
+	containers, err := c.containerClient.ContainerList(
+		context.Background(),
+		tcontainer.ListOptions{All: true},
+	)
 	errCheck(err)
+
 	c.containerInfoCache = []types.ContainerJSON{}
 
 	for _, container := range containers {
